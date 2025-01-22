@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>314e Onboarding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Step 0: Welcome Message -->
+        <div id="step0" class="step active">
+            <div class="welcome-message">
+                Welcome to 314e!
+            </div>
+        </div>
+
+        <!-- 314e Logo -->
+        <div class="logo-container">
+            <img src="images/314e-logo.svg" alt="314e Logo" class="logo">
+        </div>
+        <h1>314e Onboarding</h1>
+
+        <!-- Step 1: Sign in to Chrome -->
+        <div id="step1" class="step">
+            <h2>Step 1: Sign in to Chrome</h2>
+            <p>Open Chrome and ensure you are signed in with <strong>your.email@314ecorp.com</strong> email address. This is essential for accessing company resources.</p>
+            <div class="logo-container">
+                <button class="btn-logo" onclick="window.open('https://mail.google.com', '_blank')">
+                    <img src="images/gmail-logo.png" alt="Gmail Logo">
+                </button>
+                <button class="open-btn open-gmail" onclick="window.open('https://mail.google.com', '_blank')">Open Gmail</button>
+            </div>
+            <p>Click the button above to open Gmail. If you're not already signed in, click on the profile icon in the top-right corner of Chrome and sign in with your 314e credentials.</p>
+            <div class="btn-container">
+                <button class="btn" onclick="nextStep(2)">Next</button>
+            </div>
+        </div>
+
+        <!-- Step 2: Set up 1Password -->
+        <div id="step2" class="step">
+            <h2>Step 2: Set up 1Password</h2>
+            <div class="logo-container">
+                <button class="btn-logo" onclick="window.open('https://start.1password.com/sign-up', '_blank')">
+                    <img src="images/1password-logo.png" alt="1Password Logo">
+                </button>
+            </div>
+            <p>You will receive an email invitation to set up your 1Password account. Click the link in the email to confirm your account and choose a strong password.</p>
+            <p>After setting up your password, download and save your <strong>Emergency Kit</strong> PDF. This contains your Secret Key, which you'll need if you ever forget your password or need to set up 1Password on a new device.</p>
+            <div class="btn-container">
+                <button class="btn" onclick="prevStep(1)">Back</button>
+                <button class="btn" onclick="nextStep(3)">Next</button>
+            </div>
+        </div>
+
+        <!-- Step 3: Accept Slack Invitation -->
+        <div id="step3" class="step">
+            <h2>Step 3: Accept Slack Invitation</h2>
+            <div class="logo-container">
+                <button class="btn-logo" onclick="window.open('https://slack.com/get-started#/createnew', '_blank')">
+                    <img src="images/slack-logo.svg" alt="Slack Logo">
+                </button>
+                <button class="open-btn open-slack" onclick="window.open('https://slack.com/get-started#/createnew', '_blank')">Open Slack</button>
+            </div>
+            <p>Check your 314e Gmail for a Slack invitation. Click the link in the email to join the 314e Corp workspace.</p>
+            <p>Slack is our primary communication tool, so make sure to accept the invitation and familiarize yourself with the platform.</p>
+            <div class="btn-container">
+                <button class="btn" onclick="prevStep(2)">Back</button>
+                <button class="btn" onclick="nextStep(4)">Next</button>
+            </div>
+        </div>
+
+        <!-- Step 4: Onboarding Complete -->
+        <div id="step4" class="step">
+            <h2>Congratulations!</h2>
+            <p>Your initial onboarding is complete. We're thrilled to have you on board!</p>
+            <div class="gif-container">
+                <img src="images/thank-you.gif" alt="Thank You GIF">
+            </div>
+            <p>Thank you for completing these essential steps. Now, let's move on to the final step: Vanta training.</p>
+            <div class="btn-container">
+                <button class="btn" onclick="prevStep(3)">Back</button>
+                <button class="btn" onclick="nextStep(5)">Next</button>
+            </div>
+        </div>
+
+        <!-- Step 5: Vanta Training -->
+        <div id="step5" class="step">
+            <h2>Step 5: Complete Vanta Training</h2>
+            <div class="logo-container">
+                <button class="btn-logo" onclick="window.open('https://app.vanta.com/onboarding', '_blank')">
+                    <img src="images/vanta-logo.svg" alt="Vanta Logo">
+                </button>
+                <button class="open-btn open-vanta" onclick="window.open('https://app.vanta.com/onboarding', '_blank')">Open Vanta</button>
+            </div>
+            <p>This is the last step! Please complete the Vanta training, which covers essential security policies and HIPAA awareness.</p>
+            <ul>
+                <li>Read and accept our security policies.</li>
+                <li>Complete security awareness & HIPAA training.</li>
+            </ul>
+            <p>The online training should take about 20 minutes. <strong>Important:</strong> Do not click out of the video or you may have to start over.</p>
+            <p>Please complete this training as it's important for us. Let us know once you're done. Thank you!</p>
+            <div class="btn-container">
+                <button class="btn" onclick="prevStep(4)">Back</button>
+                <button class="btn" onclick="launchVantaPage(); nextStep(6);">Start Vanta Training</button>
+            </div>
+        </div>
+        
+        <!-- Step 6: Final Steps -->
+        <div id="step6" class="step">
+            <h2>Step 6: Final steps!</h2>
+            <div class="logo-container">
+                <button class="btn-logo" onclick="window.open('https://app.vanta.com/onboarding', '_blank')">
+                    <img src="images/vanta-logo.svg" alt="Vanta Logo">
+                </button>
+                <button class="open-btn open-vanta" onclick="window.open('https://app.vanta.com/onboarding', '_blank')">Open Vanta</button>
+            </div>
+            <p>Now You are done with the Vanta Training.</p>
+            <p>Please restart the system to ensure all changes are implimented and incase if you see any File valut encryption, please accept it.</p>
+            <div class="btn-container">
+                <button class="btn" onclick="prevStep(5)">Back</button>
+                <button class="btn" onclick="nextStep(7)">Done</button>
+            </div>
+        </div>
+
+        <!-- Support Information -->
+        <div class="support-info">
+            <p>If you encounter any issues during the onboarding process, please reach out to:</p>
+            <p><strong>Arun Jose - IT Engineer</strong></p>
+            <p>Phone: +91-9074053123</p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
